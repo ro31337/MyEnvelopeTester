@@ -1,0 +1,16 @@
+# all temp files
+*.tmp
+# all microsoft word temp files
+~*.docx
+~*.doc
+# all pdb files
+*.pdb
+# executables and binary files
+*.exe
+*.dll
+# visual studio unnecessary files
+*.suo
+# ignore visual studio binary files
+MyEnvelopeTester/bin/*
+MyEnvelopeTester/obj/*
+
