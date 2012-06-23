@@ -20,20 +20,16 @@ namespace MyEnvelopeTester.Core
 
         public void Init(IRandomProvider randomProvider)
         {
-            // $5 or $10
+            // from $1 or $2000
 
-            int a = 0;
-            int b = 0;
+            int a = randomProvider.Next(1, 1000);
+            int b = a * 2;
 
-            if (randomProvider.Next(0, 100) >= 50)
+            if (randomProvider.Next(1, 100) > 50)
             {
-                a = 5;
-                b = 10;
-            }
-            else
-            {
-                a = 10;
-                b = 5;
+                int tmp = a;
+                a = b;
+                b = tmp;
             }
 
             // put money inside

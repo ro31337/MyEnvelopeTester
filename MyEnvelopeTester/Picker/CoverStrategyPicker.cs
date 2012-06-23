@@ -10,9 +10,12 @@ namespace MyEnvelopeTester.Picker
 {
     public class CoverStrategyPicker : IPicker
     {
+        private int max = 10;
+
         public int Pick(IRandomProvider randomProvider, EnvelopePair envelopePair)
         {
-            int randomValue = randomProvider.Next(1, 10);
+            int amount = 0;
+            int randomValue = randomProvider.Next(1, max);
 
             /*
              * То есть чем меньше сумма в конверте А, тем с большей вероятностью следует сменить конверт и наоборот,
@@ -21,12 +24,18 @@ namespace MyEnvelopeTester.Picker
             
             if (envelopePair.FirstEnvelope.Amount <= randomValue)
             {
-                return envelopePair.SecondEnvelope.Amount;
+                amount = envelopePair.SecondEnvelope.Amount;
             }
             else
             {
-                return envelopePair.FirstEnvelope.Amount;
+                amount = envelopePair.FirstEnvelope.Amount;
             }
+
+
+            if (amount > max)
+                max = amount;
+
+            return amount;
         }
     }
 }

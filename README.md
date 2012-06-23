@@ -25,13 +25,16 @@ Sample output
 ==============
 
 C:\Projects3\MyEnvelopeTester\MyEnvelopeTester\bin\Debug>MyEnvelopeTester.exe <-- AlwaysFirstPicker
-Your balance is: 7503495
+
+Your balance is: 747194283
 
 C:\Projects3\MyEnvelopeTester\MyEnvelopeTester\bin\Debug>MyEnvelopeTester.exe <-- AlwaysSecondPicker
-Your balance is: 7504335
+
+Your balance is: 753184502
 
 C:\Projects3\MyEnvelopeTester\MyEnvelopeTester\bin\Debug>MyEnvelopeTester.exe <-- CoverStrategyPicker
-Your balance is: 8886740
+
+Your balance is: 832854221
 
 How to test
 ===========
@@ -47,22 +50,4 @@ available pickers are:
 * CoverStrategyPicker
 
 compile the program.
-
-More fun
-========
-
-Change the line at CoverStrategyPicker.cs:
-
-int randomValue = randomProvider.Next(1, 10);
-
-to something like
-
-int randomValue = randomProvider.Next(1, 20);
-
-or
-
-int randomValue = randomProvider.Next(1, 30);
-
-and see results!
-
 
